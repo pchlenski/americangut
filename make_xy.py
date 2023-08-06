@@ -64,6 +64,17 @@ def make_anndata_X_y(
         adata = anndata.read_h5ad(adata)
     assert isinstance(adata, anndata.AnnData)
 
+    # Body site hack
+    if column == "host_body_habitat":
+        adata = adata[
+            adata.obs.host_body_habitat.isin(
+                ["uberon:skin", "uberon:oral cavity"]
+            )
+        ]
+        adata.obs.host_body_habitat = adata.obs.host_body_habitat.replace(
+            {"uberon:skin": "yes", "uberon:oral cavity": "no"}
+        )
+
     # Get X values for starting
     if embedding is None:
         data = adata.X.todense()
