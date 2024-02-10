@@ -28,7 +28,7 @@ _nan_master = [
 
 
 def make_anndata_X_y(
-    adata: anndata.AnnData = "data/big_table_with_embeddings.h5ad",
+    adata: anndata.AnnData = "/home/phil/americangut/data/big_table_with_embeddings.h5ad",
     column: str = "ibd",
     pos_vals: list = _pos_master,
     neg_vals: list = _neg_master,

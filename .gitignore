@@ -3,4 +3,6 @@ data/
 HoroPCA/
 hsvm/
 hyperbolic-learning/
-
+hyperbolic_learning
+hyperbolic_learning/
+*.pyc
